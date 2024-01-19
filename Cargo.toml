@@ -1,0 +1,15 @@
+[package]
+name = "explorer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.72"
+clap = { version = "4.3.21", features = ["derive"] }
+clap-stdin = "0.2.1"
+prost = "0.11.9"
+serde = { version = "1.0.183", features = ["derive"] }
+tokio = { version = "1.31.0", features = ["full"] }
+tonic = "0.9.2"
