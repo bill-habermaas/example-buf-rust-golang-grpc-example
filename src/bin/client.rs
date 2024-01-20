@@ -14,22 +14,13 @@ struct Args {
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    // Parse command-line arguments
-    let args = Args::parse();
-    // There may be multiple user agents separated by newlines
-    let user_agents: Vec<String> = args
-        .user_agent
-        .split("\n")
-        .map(|s| s.to_string())
-        .filter(|s| !s.is_empty())
-        .collect();
 
     // Set up the client
     let mut client = ExplorerServiceClient::connect("http://127.0.0.1:8080").await?;
 
     let request = Request::new(ExplorerRequest { name: "bill".to_string() });
     let response = client.explore(request).await?;
-    let action = response.into_inner().message();
+    let action = response.into_inner().message;
     println!("{action:?}");
 
     Ok(())

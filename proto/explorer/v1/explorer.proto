@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 package explorer.v1;
-option go_package = "explorer.v1";
 
 message ExplorerRequest {
     string name = 1;
@@ -12,5 +11,4 @@ message ExplorerResponse {
 }
 
 service ExplorerService {
-    rpc explore(ExplorerRequest) returns (ExplorerResponse) {}
-}
+    rpc explore(ExplorerRequest) returns (ExplorerResponse) {}}
