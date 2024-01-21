@@ -39,5 +39,5 @@ func (s *explorerServiceServer) Explore(
 	name := req.Msg.GetName()
 	log.Printf("Got a request to create named %s", name)
 	return connect.NewResponse(&explorerv1.ExplorerResponse{
-	Message: "hello", }), nil
+	Message: " world", }), nil
 }
