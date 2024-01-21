@@ -46,6 +46,6 @@ The client simply sends a message to the server and prints the reply.
 Run the client through cargo from the project directory. 
 
 ```shell
-cargo run -r --bin client 
+cargo run --bin client 
 ```
 For testing the connection use the buf curl script ./runbuf.sh

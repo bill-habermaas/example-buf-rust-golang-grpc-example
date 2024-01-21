@@ -26,13 +26,13 @@ func main() {
 	)
 }
 
-// petStoreServiceServer implements the PetStoreService API.
+// ExplorerServiceServer implements the PetStoreService API.
 type explorerServiceServer struct {
 	explorerv1connect.UnimplementedExplorerServiceHandler
 }
 
-// PutPet adds the pet associated with the given request into the PetStore.
-func (s *explorerServiceServer) explore(
+// explore adds the pet associated with the given request into the PetStore.
+func (s *explorerServiceServer) Explore(
 	ctx context.Context,
 	req *connect.Request[explorerv1.ExplorerRequest],
 ) (*connect.Response[explorerv1.ExplorerResponse], error) {
