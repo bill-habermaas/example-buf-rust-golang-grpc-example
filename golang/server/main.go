@@ -1,11 +1,11 @@
 package main
 
 import (
-	connect "connectrpc.com/connect"
+	"connectrpc.com/connect"
 	"context"
 	"fmt"
-	explorerv1 "github.com/bufbuild/explorer/gen/explorer/v1"
-	explorerv1connect "github.com/bufbuild/explorer/gen/explorer/v1/explorer_v1connect"
+	explorerv1 "github.com/bufbuild/explorer/gen/proto/explorer/v1"
+	"github.com/bufbuild/explorer/gen/proto/explorer/v1/explorerv1connect"
 	"golang.org/x/net/http2"
 	"golang.org/x/net/http2/h2c"
 	"log"
@@ -32,7 +32,7 @@ type explorerServiceServer struct {
 }
 
 // PutPet adds the pet associated with the given request into the PetStore.
-func (s *explorerServiceServer) PutPet(
+func (s *explorerServiceServer) explore(
 	ctx context.Context,
 	req *connect.Request[explorerv1.ExplorerRequest],
 ) (*connect.Response[explorerv1.ExplorerResponse], error) {

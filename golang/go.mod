@@ -1,4 +1,4 @@
-module server
+module github.com/bufbuild/explorer
 
 go 1.21.5
 
