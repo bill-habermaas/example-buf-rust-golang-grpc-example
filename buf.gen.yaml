@@ -4,12 +4,22 @@ managed:
   go_package_prefix:
     default: github.com/bufbuild/explorer/gen
 plugins:
+  # Java support
+  - plugin: buf.build/bufbuild/validate-java:v1.0.4
+    out: java/grpcdemo/src/main/java/com/locutis257/grpcdemo/grpcgenerated
+  - plugin: buf.build/grpc/java:v1.61.0
+    out: java/grpcdemo/src/main/java/com/locutis257/grpcdemo/grpcgenerated
+  # dependencies
+  - plugin: buf.build/protocolbuffers/java
+    out: java/grpcdemo/src/main/java/com/locutis257/grpcdemo/grpcgenerated
+  # Golang support
   - plugin: buf.build/protocolbuffers/go
     out: golang/gen
     opt: paths=source_relative
   - plugin: buf.build/connectrpc/go
     out: golang/gen
     opt: paths=source_relative
+  # Rust support
   - plugin: buf.build/community/neoeinstein-prost:v0.2.3
     out: src/gen
     opt:
