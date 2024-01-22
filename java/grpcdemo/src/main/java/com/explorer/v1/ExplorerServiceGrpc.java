@@ -1,5 +1,7 @@
 package com.explorer.v1;
 
+import io.grpc.stub.StreamObserver;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
@@ -111,6 +113,9 @@ public final class ExplorerServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return ExplorerServiceGrpc.bindService(this);
     }
+
+    public abstract void Explore(ExplorerRequest request,
+                                 StreamObserver<ExplorerResponse> responseObserver);
   }
 
   /**
