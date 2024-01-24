@@ -16,7 +16,7 @@ struct Args {
 async fn main() -> Result<(), Error> {
 
     // Set up the client
-    let mut client = ExplorerServiceClient::connect("http://127.0.0.1:8080").await?;
+    let mut client = ExplorerServiceClient::connect("http://127.0.0.1:6565").await?;
 
     let request = Request::new(ExplorerRequest { name: "bill".to_string() });
     let response = client.explore(request).await?;

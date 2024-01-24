@@ -13,7 +13,7 @@ import (
 func main() {
 	client := explorerv1connect.NewExplorerServiceClient(
 		http.DefaultClient,
-		"http://localhost:8080",
+		"http://localhost:6565",
 		connect.WithGRPC(),
 	)
 	request := &explorerv1.ExplorerRequest{Name: "Gophers"}
